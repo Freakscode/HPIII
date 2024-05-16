@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.evento {
+  @apply flex justify-between items-center mb-6 border-b pb-6 text-black;
+}
+
+.evento:last-child {
+  @apply border-b-0;
+}
+
+.evento-info {
+  @apply flex-1 pr-4;
+}
+
+.evento-imagen {
+  @apply flex-none;
+}
+
+.evento-imagen img {
+  @apply rounded-lg;
+}
+
+.main-content {
+  margin-top: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .main-content {
+    margin-top: 4rem;
+    margin-left: 4rem;
+  }
+}
